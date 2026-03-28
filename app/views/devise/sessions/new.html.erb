@@ -1,0 +1,20 @@
+<div>
+  <div class="container1">
+    <div class="header">
+    <h1 class="text-4xl font-bold mb-4">Welcome to GPort</h1>
+    <p class="text-lg text-gray-700 mb-6">Your gateway to seamless project management and collaboration.</p>
+    </div>
+     <%= form_for(resource, as: resource_name, url: session_path(resource_name), data: {turbo: false}) do |f| %>
+     <div class="inputs" style="display:flex; flex-direction:column; gap:1rem;">
+     <p><%= f.label :email, class: "block text-sm font-medium text-gray-700" %></p>
+      <%= f.email_field :email, style: "border: 1px solid #0b0a0a; padding: 1rem; border-radius: 0.25rem;" %>
+      <label for=password class="block text-sm font-medium text-gray-700">Password</label>
+      <%= f.password_field :password, style: "border: 1px solid #0b0a0a; padding: 1rem; border-radius: 0.25rem;" %>
+      <button type="button" onclick="togglePasswordVisibility()" style="position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+      </button> 
+      <p><%= f.submit "Login", style: "background-color: #4A90E2; color: white; padding: 1rem 1rem; border: none; border-radius: 0.25rem; cursor: pointer;" %></p>
+      <a href="/users/sign_up">Don't have an account? Sign up</a>
+     </div>
+     <% end %>
+  </div>
+</div>

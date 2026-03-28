@@ -1,0 +1,6 @@
+<menu>
+  <li><a href="/login">Login</a></li>
+  <li><a href="/sessions/new">Sign Out</a></li>
+</menu>
+
+<%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
