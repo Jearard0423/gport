@@ -19,6 +19,12 @@ gem "jbuilder"
 
 gem "pg"
 
+gem 'letter_opener'
+
+group :development, :test do 
+  gem 'rspec-rails'
+end 
+
 gem "tailwindcss-rails"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]

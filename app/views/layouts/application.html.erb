@@ -8,8 +8,28 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <% if notice %>
+    <div id="notice-box" style="background-color: #d4edda; color: #155724; padding: 1rem; border-radius: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+    <p style="margin: 0;"><%= notice %></p>
+    <button onclick="document.getElementById('notice-box').style.display='none'" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">✕</button>
+   </div>
+    <% end %>
+    <% if alert %>
+    <div id="alert-box" style="background-color: #f8d7da; color: #721c24; padding: 1rem; border-radius: 0.25rem; display: flex; justify-content: space-between; align-items: center;">
+    <p style="margin: 0;"><%= alert %></p>
+    <button onclick="document.getElementById('alert-box').style.display='none'" style="background: none; border: none; cursor: pointer; font-size: 1.2rem;">✕</button>
+    </div>
+    <% end %>
+
+    <script>
+      setTimeout(function(){
+        var notice = document.getElementById('notice-box');
+        var alert = document.getElementById('alert-box');
+        if (notice) notice.style.display = 'none';
+        if (alert) alert.style.display = 'none';
+      }, 5000);
+    </script>
+    
     <%= yield :head %>
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
