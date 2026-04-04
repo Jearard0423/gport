@@ -19,11 +19,11 @@ gem "jbuilder"
 
 gem "pg"
 
-gem 'letter_opener'
+gem "letter_opener"
 
-group :development, :test do 
-  gem 'rspec-rails'
-end 
+group :development, :test do
+  gem "rspec-rails"
+end
 
 gem "tailwindcss-rails"
 
@@ -37,6 +37,8 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
 gem "solid_queue"
 gem "solid_cable"
+
+gem "jquery-rails"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false

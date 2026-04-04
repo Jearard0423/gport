@@ -22,27 +22,23 @@
   </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>
-  var emailField = document.getElementById("email");
-  var passwordField = document.getElementById("password");
-  var rememberMefield = document.getElementById("remember_me");
-
- document.getElementById("remember_me").addEventListener("change", function(){
-  if(this.checked){
-    localStorage.setItem("email", emailField.value);
-    localStorage.setItem("password", passwordField.value);
-  } else {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
-
-  }
-})
-
-  window.onload = function(){
-    if(localStorage.getItem("email") && localStorage.getItem("password")){
-       emailField.value = localStorage.getItem("email");
-       passwordField.value = localStorage.getItem("password");
+$(document).ready(function() {
+  $("#email").val(localStorage.getItem('email'));
+  $("#password").val(localStorage.getItem('password'));
+  $("#remember_me").prop('checked', localStorage.getItem('remember_me') === 'true');
+  $("#remember_me").on("change", function() {
+    if ($("#remember_me").is(":checked")) {
+      localStorage.setItem('email', $("#email").val());
+      localStorage.setItem('password', $("#password").val());
+      localStorage.setItem('remember_me', true);
+    } else {
+      localStorage.removeItem('email');
+      localStorage.removeItem('password');
+      localStorage.setItem('remember_me', false);
     }
-  }
- </script>
+  });
+});
+</script>
