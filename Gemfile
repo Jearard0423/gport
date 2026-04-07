@@ -40,6 +40,13 @@ gem "solid_cable"
 
 gem "jquery-rails"
 
+gem 'sanitize'
+
+gem "acts_as_list" # handles section position ordering cleanly 
+gem "prawn" # PDF/static export - Pure RUBY PDF GENERATION 
+gem "meta-tags" # OG tags on published portfolios
+gem "friendly_id" #slug generation for portfolios
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
